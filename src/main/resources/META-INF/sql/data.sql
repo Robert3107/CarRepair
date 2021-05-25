@@ -1,7 +1,7 @@
-DROP DATABASE `CarRegister`;
+DROP DATABASE `CarRepairRegister`;
 
-CREATE DATABASE `CarRegister`
+CREATE DATABASE `CarRepairRegister`
 CHARACTER SET utf8
 COLLATE utf8_general_ci;
 
-use CarRegister;
+use CarRepairRegister;
