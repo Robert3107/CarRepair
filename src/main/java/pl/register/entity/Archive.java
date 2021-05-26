@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "archive")
+@Table(name = "taskArchive")
 public class Archive {
 
     @Id
@@ -12,22 +12,21 @@ public class Archive {
     private Long id;
     private String customerFirstName;
     private String customerLastName;
-    private String telephone;
-    private String PESEL;
+    private String customerTelephone;
+    private String customerPesel;
     private String weselModel;
-    @Size(min = 1, max = 600)
-    private String describe;
-    private String cost;
+    private String describeOrder;
+    private String orderCost;
 
-    public Archive(Long id, String customerFirstName, String customerLastName, String telephone, String PESEL, String weselModel, String describe, String cost) {
+    public Archive(Long id, String customerFirstName, String customerLastName, String customerTelephone, String customerPesel, String weselModel, String describeOrder, String orderCost) {
         this.id = id;
         this.customerFirstName = customerFirstName;
         this.customerLastName = customerLastName;
-        this.telephone = telephone;
-        this.PESEL = PESEL;
+        this.customerTelephone = customerTelephone;
+        this.customerPesel = customerPesel;
         this.weselModel = weselModel;
-        this.describe = describe;
-        this.cost = cost;
+        this.describeOrder = describeOrder;
+        this.orderCost = orderCost;
     }
 
     public Archive() {
@@ -57,20 +56,20 @@ public class Archive {
         this.customerLastName = customerLastName;
     }
 
-    public String getTelephone() {
-        return telephone;
+    public String getCustomerTelephone() {
+        return customerTelephone;
     }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
+    public void setCustomerTelephone(String customerTelephone) {
+        this.customerTelephone = customerTelephone;
     }
 
-    public String getPESEL() {
-        return PESEL;
+    public String getCustomerPesel() {
+        return customerPesel;
     }
 
-    public void setPESEL(String PESEL) {
-        this.PESEL = PESEL;
+    public void setCustomerPesel(String customerPesel) {
+        this.customerPesel = customerPesel;
     }
 
     public String getWeselModel() {
@@ -81,33 +80,19 @@ public class Archive {
         this.weselModel = weselModel;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getDescribeOrder() {
+        return describeOrder;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setDescribeOrder(String describeOrder) {
+        this.describeOrder = describeOrder;
     }
 
-    public String getCost() {
-        return cost;
+    public String getOrderCost() {
+        return orderCost;
     }
 
-    public void setCost(String cost) {
-        this.cost = cost;
-    }
-
-    @Override
-    public String toString() {
-        return "Archive{" +
-                "id=" + id +
-                ", customerFirstName='" + customerFirstName + '\'' +
-                ", customerLastName='" + customerLastName + '\'' +
-                ", telephone='" + telephone + '\'' +
-                ", PESEL='" + PESEL + '\'' +
-                ", weselModel='" + weselModel + '\'' +
-                ", describe='" + describe + '\'' +
-                ", cost='" + cost + '\'' +
-                '}';
+    public void setOrderCost(String orderCost) {
+        this.orderCost = orderCost;
     }
 }

@@ -4,31 +4,36 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "registers")
+@Table(name = "orderRegister")
 public class TaskRegister {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private int employeeID;
     private String customerFirstName;
     private String customerLastName;
-    @Size(min = 9, max = 9)
-    private String telephone;
-    @Size(min = 11, max = 11)
-    private String PESEL;
+    @Size(min = 9)
+    private String customerTelephone;
+    @Size(min = 11)
+    private String customerPesel;
     private String vehicleModel;
-    private String describe;
-    private String cost;
+    private String describeOrder;
+    private String orderCost;
 
-    public TaskRegister(Long id, String customerFirstName, String customerLastName, String telephone, String PESEL, String vehicleModel, String describe, String cost) {
+    public TaskRegister(Long id, int employeeID, String customerFirstName,
+                        String customerLastName, String customerTelephone,
+                        String customerPesel, String vehicleModel,
+                        String describeOrder, String orderCost) {
         this.id = id;
+        this.employeeID = employeeID;
         this.customerFirstName = customerFirstName;
         this.customerLastName = customerLastName;
-        this.telephone = telephone;
-        this.PESEL = PESEL;
+        this.customerTelephone = customerTelephone;
+        this.customerPesel = customerPesel;
         this.vehicleModel = vehicleModel;
-        this.describe = describe;
-        this.cost = cost;
+        this.describeOrder = describeOrder;
+        this.orderCost = orderCost;
     }
 
     public TaskRegister() {
@@ -40,6 +45,14 @@ public class TaskRegister {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public int getEmployeeID() {
+        return employeeID;
+    }
+
+    public void setEmployeeID(int employeeID) {
+        this.employeeID = employeeID;
     }
 
     public String getCustomerFirstName() {
@@ -58,20 +71,20 @@ public class TaskRegister {
         this.customerLastName = customerLastName;
     }
 
-    public String getTelephone() {
-        return telephone;
+    public String getCustomerTelephone() {
+        return customerTelephone;
     }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
+    public void setCustomerTelephone(String customerTelephone) {
+        this.customerTelephone = customerTelephone;
     }
 
-    public String getPESEL() {
-        return PESEL;
+    public String getCustomerPesel() {
+        return customerPesel;
     }
 
-    public void setPESEL(String PESEL) {
-        this.PESEL = PESEL;
+    public void setCustomerPesel(String customerPesel) {
+        this.customerPesel = customerPesel;
     }
 
     public String getVehicleModel() {
@@ -82,20 +95,20 @@ public class TaskRegister {
         this.vehicleModel = vehicleModel;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getDescribeOrder() {
+        return describeOrder;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setDescribeOrder(String describeOrder) {
+        this.describeOrder = describeOrder;
     }
 
-    public String getCost() {
-        return cost;
+    public String getOrderCost() {
+        return orderCost;
     }
 
-    public void setCost(String cost) {
-        this.cost = cost;
+    public void setOrderCost(String orderCost) {
+        this.orderCost = orderCost;
     }
 
     @Override
@@ -104,11 +117,11 @@ public class TaskRegister {
                 "id=" + id +
                 ", customerFirstName='" + customerFirstName + '\'' +
                 ", customerLastName='" + customerLastName + '\'' +
-                ", telephone='" + telephone + '\'' +
-                ", PESEL='" + PESEL + '\'' +
+                ", telephone='" + customerTelephone + '\'' +
+                ", PESEL='" + customerPesel + '\'' +
                 ", weselModel='" + vehicleModel + '\'' +
-                ", describe='" + describe + '\'' +
-                ", cost='" + cost + '\'' +
-                '}';
+                ", describe='" + describeOrder + '\'' +
+                ", cost='" + orderCost + '\'' +
+                '}' + "\n";
     }
 }

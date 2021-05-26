@@ -8,14 +8,14 @@
 </head>
 <body>
 <div class="pageTittle">
-    <h1>Rejestr Napraw Samochodowych</h1>
+    <h1>Rejestr napraw samochodowych</h1>
 </div>
 <div class="groupPosition">
 
-    <input type="text" name="login" placeholder="Nazwa użytkownika">
-    <input type="password" name="password" placeholder="Hasło">
     <div class="divPositionButton">
-        <button type="button" name="buton">Zaloguj</button>
+        <a href=>
+            <button>Logowanie</button>
+        </a>
     </div>
 </div>
 </body>
