@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="pageTittle">
-    <h1>Nowe zlecenie</h1>
+    <h1>Dodawanie nowego pracownika</h1>
 </div>
 <form:form method="post" modelAttribute="employee">
     <fieldset>
@@ -37,9 +37,16 @@
             </div>
         </div>
         <div>
-            <input type="submit" name="Zapisz">
+            <input type="submit" value="Dodaj pracownika">
         </div>
     </fieldset>
 </form:form>
+<div>
+    <a href="http://localhost:8080/carapp/main/menu">
+        <div class="divPositionButton">
+            <button type="button" name="deleteEmployeeButton">Menu główne</button>
+        </div>
+    </a>
+</div>
 </body>
 </html>

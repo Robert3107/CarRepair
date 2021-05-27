@@ -8,12 +8,12 @@
 </head>
 <body>
 <div class="pageTittle">
-    <h1>Rejestr napraw samochodowych</h1>
+    <h1>Car Repair</h1>
 </div>
 <div class="groupPosition">
 
     <div class="divPositionButton">
-        <a href=>
+        <a href="http://localhost:8080/carapp/user/login">
             <button>Logowanie</button>
         </a>
     </div>

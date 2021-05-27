@@ -14,19 +14,19 @@
     <fieldset>
         <div class="groupPosition">
             <div class="form-group">
-                <label class="col-md-4 control-label" for="userName">Imię pracownika</label>
+                <label class="col-md-4 control-label" for="userName" style="color: #f27100">Nazwa użytkownika</label>
                 <div class="col-md-5">
                     <form:input id="userName" path="userName" placeholder="Nazwa użytkownika"/>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-4 control-label" for="password">Imię pracownika</label>
+                <label class="col-md-4 control-label" for="password" style="color: #f27100">Hasło</label>
                 <div class="col-md-5">
                     <form:password id="password" path="password" placeholder="Hasło"/>
                 </div>
             </div>
             <div class="divPositionButton">
-                <button type="button" name="buton">Zaloguj</button>
+                <button type="button" name="loginButton">Zaloguj</button>
             </div>
         </div>
     </fieldset>

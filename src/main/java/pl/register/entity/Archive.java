@@ -10,21 +10,25 @@ public class Archive {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private int employeeID;
     private String customerFirstName;
     private String customerLastName;
+    @Size(min = 9)
     private String customerTelephone;
+    @Size(min = 11)
     private String customerPesel;
-    private String weselModel;
+    private String vehicleModel;
     private String describeOrder;
     private String orderCost;
 
-    public Archive(Long id, String customerFirstName, String customerLastName, String customerTelephone, String customerPesel, String weselModel, String describeOrder, String orderCost) {
+    public Archive(Long id, int employeeID, String customerFirstName, String customerLastName, String customerTelephone, String customerPesel, String vehicleModel, String describeOrder, String orderCost) {
         this.id = id;
+        this.employeeID = employeeID;
         this.customerFirstName = customerFirstName;
         this.customerLastName = customerLastName;
         this.customerTelephone = customerTelephone;
         this.customerPesel = customerPesel;
-        this.weselModel = weselModel;
+        this.vehicleModel = vehicleModel;
         this.describeOrder = describeOrder;
         this.orderCost = orderCost;
     }
@@ -38,6 +42,14 @@ public class Archive {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public int getEmployeeID() {
+        return employeeID;
+    }
+
+    public void setEmployeeID(int employeeID) {
+        this.employeeID = employeeID;
     }
 
     public String getCustomerFirstName() {
@@ -72,12 +84,12 @@ public class Archive {
         this.customerPesel = customerPesel;
     }
 
-    public String getWeselModel() {
-        return weselModel;
+    public String getVehicleModel() {
+        return vehicleModel;
     }
 
-    public void setWeselModel(String weselModel) {
-        this.weselModel = weselModel;
+    public void setVehicleModel(String vehicleModel) {
+        this.vehicleModel = vehicleModel;
     }
 
     public String getDescribeOrder() {
@@ -94,5 +106,20 @@ public class Archive {
 
     public void setOrderCost(String orderCost) {
         this.orderCost = orderCost;
+    }
+
+    @Override
+    public String toString() {
+        return "Archive{" +
+                "id=" + id +
+                ", employeeID=" + employeeID +
+                ", customerFirstName='" + customerFirstName + '\'' +
+                ", customerLastName='" + customerLastName + '\'' +
+                ", customerTelephone='" + customerTelephone + '\'' +
+                ", customerPesel='" + customerPesel + '\'' +
+                ", vehicleModel='" + vehicleModel + '\'' +
+                ", describeOrder='" + describeOrder + '\'' +
+                ", orderCost='" + orderCost + '\'' +
+                '}';
     }
 }

@@ -6,14 +6,13 @@ import org.springframework.web.bind.annotation.*;
 import pl.register.entity.TaskRegister;
 import pl.register.repository.TaskRepository;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
 @RequestMapping("/tasks")
-
 public class TaskController {
-    private TaskRepository taskRepository;
+
+    private final TaskRepository taskRepository;
 
     public TaskController(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
@@ -43,12 +42,32 @@ public class TaskController {
         return "mainMenu";
     }
 
-    //nie działa rysowanie tabeli
     @GetMapping("/all")
     public String showAllTask(Model m) {
         List<TaskRegister> tasks = taskRepository.findAll();
         m.addAttribute("orderRegister", tasks);
         return "tasks/taskRegister";
+    }
+
+    @PostMapping("/all")
+    public String showAllTaskPost(Model m) {
+        List<TaskRegister> searchTask = taskRepository.findAll();
+        m.addAttribute("orderRegister", searchTask);
+
+        return "tasks/taskRegister";
+    }
+
+    @GetMapping("/{id}/delete")
+    public String deleteTask(@PathVariable long id, Model m) {
+        m.addAttribute("task", taskRepository.findById(id));
+
+        return "tasks/deleteTask";
+    }
+
+    @PostMapping("/{id}/delete")
+    public String deleteTask(@ModelAttribute TaskRegister task) {
+        taskRepository.delete(task);
+        return "mainMenu";
     }
 
 }

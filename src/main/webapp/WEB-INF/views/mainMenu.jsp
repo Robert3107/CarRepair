@@ -11,16 +11,27 @@
     <h1>Menu Główne</h1>
 </div>
 <div class="groupPosition">
-    <a href="">
-        <div class="mainDiv">Nowe zlecenie</div></a>
-    <a href="taskRegister.html">
-        <div class="mainDiv">Rejestr zleceń</div></a>
-    <a href="">
-        <div class="mainDiv">Pracownicy</div></a>
-    <a href="archive.html">
-        <div class="mainDiv">Archiwum</div></a>
-    <a href="credits.html">
-        <div class="mainDiv">O aplikacji</div></a>
+
+    <a href="http://localhost:8080/carapp/tasks/add">
+        <div class="mainDiv">Nowe zlecenie</div>
+    </a>
+
+    <a href="http://localhost:8080/carapp/tasks/all">
+        <div class="mainDiv">Rejestr zleceń</div>
+    </a>
+
+    <a href="http://localhost:8080/carapp/user/all">
+        <div class="mainDiv">Pracownicy</div>
+    </a>
+
+    <a href="http://localhost:8080/carapp/archive/all">
+        <div class="mainDiv">Archiwum</div>
+    </a>
+
+    <a href="http://localhost:8080/carapp/main/credits">
+        <div class="mainDiv">O aplikacji</div>
+    </a>
+
     <div class="divPositionButton">
         <button>Wyloguj</button>
     </div>

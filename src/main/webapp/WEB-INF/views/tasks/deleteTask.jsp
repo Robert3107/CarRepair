@@ -4,22 +4,22 @@
 <head>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css"/>
     <meta charset="UTF-8">
-    <title>Nowe Zlecenie</title>
+    <title>Usuń zlecenie</title>
 </head>
 <body>
     <div class="pageTittle">
-        <h1>Usuwanie pracownika</h1>
+        <h1>Usuwanie zlecenia</h1>
     </div>
-    <form:form method="post" modelAttribute="employee">
+    <form:form method="post" modelAttribute="task">
         <fieldset>
             <div class="form-group">
-                <label class="col-md-4 control-label" for="id">ID Pracownika</label>
+                <label class="col-md-4 control-label" for="id">ID zlecenia</label>
                 <div class="col-md-5">
-                    <form:input id="id" path="id" placeholder="ID"/>
+                    <form:input id="id" path="id" placeholder="ID..."/>
                 </div>
             </div>
-            <div>
-                <input type="submit" name="Zapisz">
+            <div class="divPositionButton">
+                <button type="button" name="deleteButton">Usuń</button>
             </div>
         </fieldset>
     </form:form>
