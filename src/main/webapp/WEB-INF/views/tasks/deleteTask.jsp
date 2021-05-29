@@ -18,8 +18,10 @@
                     <form:input id="id" path="id" placeholder="ID..."/>
                 </div>
             </div>
-            <div class="divPositionButton">
-                <button type="button" name="deleteButton">Usuń</button>
+            <div>
+                <a href="http://localhost:8080/carapp/tasks/all">
+                <input type="submit" value="Usuń">
+                </a>
             </div>
         </fieldset>
     </form:form>

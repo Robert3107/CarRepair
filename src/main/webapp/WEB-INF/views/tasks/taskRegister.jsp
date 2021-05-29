@@ -13,15 +13,15 @@
 <table>
     <thead>
     <tr>
-        <th>ID Zlecenia</th>
-        <th>ID Pracownika</th>
-        <th>Imię Klienta</th>
-        <th>Nazwisko Klienta</th>
-        <th>Telefon kontaktowy</th>
-        <th>PESEL</th>
-        <th>Marka pojazdu</th>
-        <th>Opis Zlecenia</th>
-        <th>Koszt zlecenia</th>
+        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">ID Zlecenia</th>
+        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">ID Pracownika</th>
+        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">Imię Klienta</th>
+        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">Nazwisko Klienta</th>
+        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">Telefon kontaktowy</th>
+        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">PESEL</th>
+        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">Marka pojazdu</th>
+        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">Opis Zlecenia</th>
+        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">Koszt zlecenia</th>
     </tr>
     </thead>
     <tbody>
@@ -65,7 +65,7 @@
         </a>
     </div>
     <div>
-        <a href="http://localhost:8080/carapp/tasks/edit">
+        <a href="http://localhost:8080/carapp/tasks/edit/id=?/description=?">
             <div class="divPositionButton">
                 <button type="button" name="editButton">Edytuj zlecenie</button>
             </div>

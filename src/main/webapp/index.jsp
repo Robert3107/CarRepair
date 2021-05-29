@@ -13,7 +13,7 @@
 <div class="groupPosition">
 
     <div class="divPositionButton">
-        <a href="http://localhost:8080/carapp/user/login">
+        <a href="http://localhost:8080/carapp/main/menu">
             <button>Logowanie</button>
         </a>
     </div>

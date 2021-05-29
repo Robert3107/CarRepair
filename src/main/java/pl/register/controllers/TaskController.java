@@ -1,8 +1,10 @@
 package pl.register.controllers;
 
+import org.dom4j.rule.Mode;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import pl.register.dao.TaskRegisterDao;
 import pl.register.entity.TaskRegister;
 import pl.register.repository.TaskRepository;
 
@@ -13,9 +15,10 @@ import java.util.List;
 public class TaskController {
 
     private final TaskRepository taskRepository;
-
-    public TaskController(TaskRepository taskRepository) {
+    private final TaskRegisterDao taskRegisterDao;
+    public TaskController(TaskRepository taskRepository, TaskRegisterDao taskRegisterDao) {
         this.taskRepository = taskRepository;
+        this.taskRegisterDao = taskRegisterDao;
     }
 
     @GetMapping("/read/{id}")
@@ -68,6 +71,16 @@ public class TaskController {
     public String deleteTask(@ModelAttribute TaskRegister task) {
         taskRepository.delete(task);
         return "mainMenu";
+    }
+
+    @GetMapping("/edit/{id}/{description}")
+    public String editTask(@PathVariable long id, @PathVariable String description) {
+        TaskRegister editTask = taskRegisterDao.findTaskByID(id);
+        editTask.setDescribeOrder(description);
+
+        taskRegisterDao.update(editTask);
+
+        return "tasks/all";
     }
 
 }

@@ -33,7 +33,9 @@
     </a>
 
     <div class="divPositionButton">
-        <button>Wyloguj</button>
+        <a href="http://localhost:8080/carapp">
+            <button>Wyloguj</button>
+        </a>
     </div>
 </div>
 </body>
