@@ -15,12 +15,13 @@
       oraz kontrolę przebiegu pracy w warsztatach samochodowych. Program oparty o środowisko Java,
       wykorzystuję najpopularniejsze framework-i ...
   </div>
-
-  <a href="https://github.com/Robert3107">
-    <div class="divPositionButton">
+  <div class="divPositionButton">
+    <a href="http://localhost:8080/carapp/main/menu">
+      <button type="button" name="mainMenuButton">Menu główne</button>
+    </a>
+  </div>
+  <a href="https://github.com/Robert3107" target="_blank">
       <img src="${pageContext.request.contextPath}/css/image/github.png" alt="GitHub">
-    </div>
   </a>
-
   </body>
 </html>

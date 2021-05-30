@@ -23,41 +23,23 @@
 
     <c:forEach items="${employees}" var="employee">
         <tr>
-            <td style="color: #f27100; border: 3px solid #f27100; background-color: #3b3b3b; font-size: large; padding: 20px;">
-                <c:out value="${employee.id}"/>
-            </td>
-            <td style="color: #f27100; border: 3px solid #f27100; background-color: #3b3b3b; font-size: large; padding: 20px;">
-                <c:out value="${employee.firstName}"/>
-            </td>
-            <td style="color: #f27100; border: 3px solid #f27100; background-color: #3b3b3b; font-size: large; padding: 20px;">
-                <c:out value="${employee.lastName}"/>
-            </td>
-            <td style="color: #f27100; border: 3px solid #f27100; background-color: #3b3b3b; font-size: large; padding: 20px;">
-                <c:out value="${employee.userName}"/>
-            </td>
+            <td><c:out value="${employee.id}"/></td>
+            <td><c:out value="${employee.firstName}"/></td>
+            <td><c:out value="${employee.lastName}"/></td>
+            <td><c:out value="${employee.userName}"/></td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-    <div>
+    <div class="flexContainerRegister">
         <a href="http://localhost:8080/carapp/user/add">
-            <div class="divPositionButton">
-                <button type="button" name="createEmployeeButton">Dodaj pracownika</button>
-            </div>
+            <button type="button" name="createEmployeeButton">Dodaj pracownika</button>
         </a>
-    </div>
-    <div>
-        <a href="http://localhost:8080/carapp/user/0/delete">
-            <div class="divPositionButton">
-                <button type="button" name="deleteEmployeeButton">Usuń pracownika</button>
-            </div>
-        </a>
-    </div>
-    <div>
         <a href="http://localhost:8080/carapp/main/menu">
-            <div class="divPositionButton">
-                <button type="button" name="deleteEmployeeButton">Menu główne</button>
-            </div>
+            <button type="button" name="deleteEmployeeButton">Menu główne</button>
+        </a>
+        <a href="http://localhost:8080/carapp/user/0/delete">
+            <button type="button" name="deleteEmployeeButton">Usuń pracownika</button>
         </a>
     </div>
 </body>

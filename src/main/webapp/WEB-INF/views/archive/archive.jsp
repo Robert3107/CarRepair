@@ -13,48 +13,37 @@
 <table>
     <thead>
     <tr>
-        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">ID Zlecenia</th>
-        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">ID Pracownika</th>
-        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">Imię Klienta</th>
-        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">Nazwisko Klienta</th>
-        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">Telefon kontaktowy</th>
-        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">PESEL</th>
-        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">Marka pojazdu</th>
-        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">Opis Zlecenia</th>
-        <th style="color: #ff4b02; border: 3px solid #ff4b02; background-color: #262626;font-size: large; padding: 20px;">Koszt zlecenia</th>
+        <th>ID Zlecenia</th>
+        <th>ID Pracownika</th>
+        <th>Imię Klienta</th>
+        <th>Nazwisko Klienta</th>
+        <th>Telefon kontaktowy</th>
+        <th>PESEL</th>
+        <th>Marka pojazdu</th>
+        <th>Opis Zlecenia</th>
+        <th>Koszt zlecenia</th>
     </tr>
     </thead>
     <tbody>
 
     <c:forEach items="${taskArchive}" var="archive">
         <tr>
-            <td  style="color: #f27100; border: 3px solid #f27100; background-color: #3b3b3b; font-size: large; padding: 20px;">
-                <c:out value="${archive.id}"/></td>
-            <td style="color: #f27100; border: 3px solid #f27100; background-color: #3b3b3b; font-size: large; padding: 20px;">
-                <c:out value="${archive.employeeID}"/></td>
-            <td style="color: #f27100; border: 3px solid #f27100; background-color: #3b3b3b; font-size: large; padding: 20px;">
-                <c:out value="${archive.customerFirstName}"/></td>
-            <td style="color: #f27100; border: 3px solid #f27100; background-color: #3b3b3b; font-size: large; padding: 20px;">
-                <c:out value="${archive.customerLastName}"/></td>
-            <td style="color: #f27100; border: 3px solid #f27100; background-color: #3b3b3b; font-size: large; padding: 20px;">
-                <c:out value="${archive.customerTelephone}"/></td>
-            <td  style="color: #f27100; border: 3px solid #f27100; background-color: #3b3b3b; font-size: large; padding: 20px;">
-                <c:out value="${archive.customerPesel}"/></td>
-            <td style="color: #f27100; border: 3px solid #f27100; background-color: #3b3b3b; font-size: large; padding: 20px;">
-                <c:out value="${archive.vehicleModel}"/></td>
-            <td style="color: #f27100; border: 3px solid #f27100; background-color: #3b3b3b; font-size: large; padding: 20px;">
-                <c:out value="${archive.describeOrder}"/></td>
-            <td style="color: #f27100; border: 3px solid #f27100; background-color: #3b3b3b; font-size: large; padding: 20px;">
-                <c:out value="${archive.orderCost}"/></td>
+            <td><c:out value="${archive.id}"/></td>
+            <td><c:out value="${archive.employeeID}"/></td>
+            <td><c:out value="${archive.customerFirstName}"/></td>
+            <td><c:out value="${archive.customerLastName}"/></td>
+            <td><c:out value="${archive.customerTelephone}"/></td>
+            <td><c:out value="${archive.customerPesel}"/></td>
+            <td><c:out value="${archive.vehicleModel}"/></td>
+            <td><c:out value="${archive.describeOrder}"/></td>
+            <td><c:out value="${archive.orderCost}"/></td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-    <div>
+    <div class="divPositionButton">
         <a href="http://localhost:8080/carapp/main/menu">
-            <div class="divPositionButton">
-                <button type="button" name="mainMenuButton">Menu główne</button>
-            </div>
+            <button type="button" name="mainMenuButton">Menu główne</button>
         </a>
     </div>
 </body>

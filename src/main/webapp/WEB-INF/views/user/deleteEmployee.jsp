@@ -11,24 +11,16 @@
     <h1>Usuwanie pracownika</h1>
 </div>
 <form:form method="post" modelAttribute="employee">
-    <fieldset>
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="id">ID Pracownika</label>
-            <div class="col-md-5">
-                <form:input id="id" path="id" placeholder="ID"/>
-            </div>
+        <div class="flexContainer">
+            <label for="id">ID Pracownika</label>
+            <form:input id="id" path="id" placeholder="ID"/>
         </div>
-        <div>
+        <div class="flexContainerSpecial">
             <input type="submit" value="Usuń">
+            <a href="http://localhost:8080/carapp/main/menu">
+                <button type="button" name="mainMenuButton">Menu główne</button>
+            </a>
         </div>
-    </fieldset>
 </form:form>
-<div>
-    <a href="http://localhost:8080/carapp/main/menu">
-        <div class="divPositionButton">
-            <button type="button" name="mainMenuButton">Menu główne</button>
-        </div>
-    </a>
-</div>
 </body>
 </html>

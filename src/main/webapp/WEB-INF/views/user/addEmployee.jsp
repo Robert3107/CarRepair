@@ -11,42 +11,34 @@
     <h1>Dodawanie nowego pracownika</h1>
 </div>
 <form:form method="post" modelAttribute="employee">
-    <fieldset>
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="firstName">Imię pracownika</label>
-            <div class="col-md-5">
-                <form:input id="firstName" path="firstName" placeholder="Jan"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="lastName">Nazwisko pracownika</label>
-            <div class="col-md-5">
-                <form:input id="lastName" path="lastName" placeholder="Kowalski"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="userName">Nazwa użytkownika</label>
-            <div class="col-md-5">
-                <form:input id="userName" path="userName" placeholder="kowal10"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="password">Hasło</label>
-            <div class="col-md-5">
-                <form:password id="password" path="password" placeholder="*****"/>
-            </div>
-        </div>
-        <div>
-            <input type="submit" value="Dodaj pracownika">
-        </div>
-    </fieldset>
-</form:form>
-<div>
-    <a href="http://localhost:8080/carapp/main/menu">
-        <div class="divPositionButton">
+
+    <div class="flexContainer">
+        <label for="firstName">Imię pracownika</label>
+        <form:input id="firstName" path="firstName" placeholder="Jan"/>
+    </div>
+
+    <div class="flexContainer">
+        <label for="lastName">Nazwisko pracownika</label>
+        <form:input id="lastName" path="lastName" placeholder="Kowalski"/>
+    </div>
+
+    <div class="flexContainer">
+        <label for="userName">Nazwa użytkownika</label>
+        <form:input id="userName" path="userName" placeholder="kowal10"/>
+    </div>
+
+    <div class="flexContainer">
+        <label for="password">Hasło</label>
+        <form:password id="password" path="password" placeholder="*****"/>
+    </div>
+
+    <div class="flexContainerSpecial">
+        <input type="submit" value="Dodaj pracownika">
+        <a href="http://localhost:8080/carapp/main/menu">
             <button type="button" name="deleteEmployeeButton">Menu główne</button>
-        </div>
-    </a>
-</div>
+        </a>
+    </div>
+
+</form:form>
 </body>
 </html>

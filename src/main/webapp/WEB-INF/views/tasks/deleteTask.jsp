@@ -7,30 +7,22 @@
     <title>Usuń zlecenie</title>
 </head>
 <body>
-    <div class="pageTittle">
-        <h1>Usuwanie zlecenia</h1>
+<div class="pageTittle">
+    <h1>Usuwanie zlecenia</h1>
+</div>
+<form:form method="post" modelAttribute="task">
+    <div class="flexContainer">
+        <label for="id">ID zlecenia</label>
+        <form:input id="id" path="id" placeholder="ID..."/>
     </div>
-    <form:form method="post" modelAttribute="task">
-        <fieldset>
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="id">ID zlecenia</label>
-                <div class="col-md-5">
-                    <form:input id="id" path="id" placeholder="ID..."/>
-                </div>
-            </div>
-            <div>
-                <a href="http://localhost:8080/carapp/tasks/all">
-                <input type="submit" value="Usuń">
-                </a>
-            </div>
-        </fieldset>
-    </form:form>
-    <div>
+    <div class="flexContainerSpecial">
+        <a href="http://localhost:8080/carapp/tasks/all">
+            <input type="submit" value="Usuń">
+        </a>
         <a href="http://localhost:8080/carapp/main/menu">
-            <div class="divPositionButton">
-                <button type="button" name="mainMenuButton">Menu główne</button>
-            </div>
+            <button type="button" name="mainMenuButton">Menu główne</button>
         </a>
     </div>
+</form:form>
 </body>
 </html>
