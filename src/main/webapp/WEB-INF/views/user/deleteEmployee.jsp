@@ -15,7 +15,7 @@
             <label for="id">ID Pracownika</label>
             <form:input id="id" path="id" placeholder="ID"/>
         </div>
-        <div class="flexContainerSpecial">
+        <div class="groupPosition">
             <input type="submit" value="Usuń">
             <a href="http://localhost:8080/carapp/main/menu">
                 <button type="button" name="mainMenuButton">Menu główne</button>

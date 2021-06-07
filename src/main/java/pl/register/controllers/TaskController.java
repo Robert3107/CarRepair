@@ -1,10 +1,8 @@
 package pl.register.controllers;
 
-import org.dom4j.rule.Mode;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.register.dao.TaskRegisterDao;
 import pl.register.entity.TaskRegister;
 import pl.register.repository.TaskRepository;
 
@@ -15,10 +13,9 @@ import java.util.List;
 public class TaskController {
 
     private final TaskRepository taskRepository;
-    private final TaskRegisterDao taskRegisterDao;
-    public TaskController(TaskRepository taskRepository, TaskRegisterDao taskRegisterDao) {
+
+    public TaskController(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
-        this.taskRegisterDao = taskRegisterDao;
     }
 
     @GetMapping("/read/{id}")
@@ -42,7 +39,7 @@ public class TaskController {
     @PostMapping("/add")
     public String addTaskPost(@ModelAttribute TaskRegister taskRegister) {
         taskRepository.save(taskRegister);
-        return "mainMenu";
+        return "redirect:all";
     }
 
     @GetMapping("/all")
@@ -70,17 +67,21 @@ public class TaskController {
     @PostMapping("/{id}/delete")
     public String deleteTask(@ModelAttribute TaskRegister task) {
         taskRepository.delete(task);
-        return "mainMenu";
+        return "redirect:../all";
     }
 
-    @GetMapping("/edit/{id}/{description}")
-    public String editTask(@PathVariable long id, @PathVariable String description) {
-        TaskRegister editTask = taskRegisterDao.findTaskByID(id);
-        editTask.setDescribeOrder(description);
+    @GetMapping("/edit/{id}")
+    public String editTask(Model m, @PathVariable long id) {
+        TaskRegister editTask = taskRepository.findByTaskId(id);
+        m.addAttribute("task", editTask);
 
-        taskRegisterDao.update(editTask);
-
-        return "tasks/all";
+        return "tasks/editTask";
     }
 
+    @PostMapping("/edit/{id}")
+    public String editTaskPost(TaskRegister taskRegister) {
+        taskRepository.save(taskRegister);
+
+        return "redirect:../all";
+    }
 }

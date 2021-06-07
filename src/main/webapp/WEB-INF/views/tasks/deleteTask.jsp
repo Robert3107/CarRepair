@@ -15,7 +15,7 @@
         <label for="id">ID zlecenia</label>
         <form:input id="id" path="id" placeholder="ID..."/>
     </div>
-    <div class="flexContainerSpecial">
+    <div class="groupPosition">
         <a href="http://localhost:8080/carapp/tasks/all">
             <input type="submit" value="Usuń">
         </a>

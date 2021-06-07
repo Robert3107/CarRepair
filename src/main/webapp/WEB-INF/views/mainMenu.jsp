@@ -24,10 +24,6 @@
         <div class="mainDiv">Pracownicy</div>
     </a>
 
-    <a href="http://localhost:8080/carapp/archive/all">
-        <div class="mainDiv">Archiwum</div>
-    </a>
-
     <a href="http://localhost:8080/carapp/main/credits">
         <div class="mainDiv">O aplikacji</div>
     </a>

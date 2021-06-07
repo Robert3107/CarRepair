@@ -27,7 +27,7 @@ public class EmployeeController {
     @PostMapping("/add")
     public String addTaskPost(@ModelAttribute Employee employee) {
         employeeRepository.save(employee);
-        return "mainMenu";
+        return "redirect:all";
     }
 
     @GetMapping("/all")
@@ -55,15 +55,22 @@ public class EmployeeController {
     @PostMapping("/{id}/delete")
     public String deleteEmployee(@ModelAttribute Employee employee) {
         employeeRepository.delete(employee);
-        return "mainMenu";
+        return "redirect:../all";
     }
 
-    // Problem z metodą do logowania
-    @PostMapping("/login/{userName}/{password}")
-    public String authorization(@PathVariable String userName,
-                                @PathVariable String password, Model m){
-        m.addAttribute("login", employeeRepository.findByUserNameAndPassword(userName, password));
-        return "mainMenu";
+    @GetMapping("/edit/{id}")
+    public String editEmployee(Model m, @PathVariable long id) {
+        Employee editEmployee = employeeRepository.findByEmployeeId(id);
+        m.addAttribute("employee", editEmployee);
+
+        return "user/editEmployee";
+    }
+
+    @PostMapping("/edit/{id}")
+    public String editEmployeePost(Employee employee) {
+        employeeRepository.save(employee);
+
+        return "redirect:../all";
     }
 
 }

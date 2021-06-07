@@ -37,26 +37,31 @@
             <td><c:out value="${task.vehicleModel}"/></td>
             <td><c:out value="${task.describeOrder}"/></td>
             <td><c:out value="${task.orderCost}"/></td>
+            <td><a href="http://localhost:8080/carapp/tasks/${task.id}/delete">
+                <button type="button" name="deleteButton">Usuń</button>
+            </a>
+            </td>
+            <td>
+                <a href="http://localhost:8080/carapp/tasks/edit/${task.id}">
+                    <button type="button" name="editButton">Edytuj</button>
+                </a>
+            </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-    <div class="flexContainerRegister">
-        <a href="http://localhost:8080/carapp/tasks/0/delete">
-            <button type="button" name="deleteButton">Usuń wpis</button>
-        </a>
-        <a href="http://localhost:8080/carapp/tasks/add">
-            <button type="button" name="addNewTaskButton">Dodaj nowe zlecenie</button>
-        </a>
-        <a href="http://localhost:8080/carapp/tasks/edit/id=?/description=?">
-            <button type="button" name="editButton">Edytuj zlecenie</button>
-        </a>
-        <a href="http://localhost:8080/carapp/main/menu">
-            <button type="button" name="mainMenuButton">Menu główne</button>
-        </a>
+<div class="flexContainerRegister">
 
-        <%-- Dodać archiwiziacje       --%>
+    <a href="http://localhost:8080/carapp/tasks/add">
+        <button type="button" name="addNewTaskButton">Dodaj nowe zlecenie</button>
+    </a>
 
-    </div>
+    <a href="http://localhost:8080/carapp/main/menu">
+        <button type="button" name="mainMenuButton">Menu główne</button>
+    </a>
+
+    <%-- Dodać archiwiziacje       --%>
+
+</div>
 </body>
 </html>

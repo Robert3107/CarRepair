@@ -10,16 +10,35 @@
         <div class="pageTittle">
             <h1>Edycja danych zlecenia</h1>
         </div>
-        <form:form method="post" modelAttribute="task">
-            <div class="groupPosition">
-                <form:input path="taskID" name="taskID" placeholder="Podaj ID zlecenia..."/>
+        <form:form method="post" modelAttribute="employee">
+
+            <div class="flexContainer">
+                <label for="firstName">Imię pracownika</label>
+                <form:input id="firstName" path="firstName" placeholder="Jan"/>
             </div>
-            <div class="groupPosition">
-                <form:textarea path="description" name="description" placeholder="Wprowadź dane do edycji..."/>
+
+            <div class="flexContainer">
+                <label for="lastName">Nazwisko pracownika</label>
+                <form:input id="lastName" path="lastName" placeholder="Kowalski"/>
             </div>
-            <div class="divPositionButton">
+
+            <div class="flexContainer">
+                <label for="userName">Nazwa użytkownika</label>
+                <form:input id="userName" path="userName" placeholder="kowal10"/>
+            </div>
+
+            <div class="flexContainer">
+                <label for="password">Hasło</label>
+                <form:password id="password" path="password" placeholder="*****"/>
+            </div>
+
+            <div class="flexContainerSpecial">
                 <input type="submit" value="Edytuj">
+                <a href="http://localhost:8080/carapp/main/menu">
+                    <button type="button" name="deleteEmployeeButton">Menu główne</button>
+                </a>
             </div>
+
         </form:form>
     </body>
 </html>

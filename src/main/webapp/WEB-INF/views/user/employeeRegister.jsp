@@ -7,10 +7,10 @@
     <title>Rejestr pracowników</title>
 </head>
 <body>
-    <div class="pageTittle">
-        <h1>Rejestr pracowników</h1>
-    </div>
-    <table>
+<div class="pageTittle">
+    <h1>Rejestr pracowników</h1>
+</div>
+<table>
     <thead>
     <tr>
         <th>ID Pracownika</th>
@@ -27,20 +27,28 @@
             <td><c:out value="${employee.firstName}"/></td>
             <td><c:out value="${employee.lastName}"/></td>
             <td><c:out value="${employee.userName}"/></td>
+            <td>
+                <a href="http://localhost:8080/carapp/user/${employee.id}/delete">
+                    <button type="button" name="deleteEmployeeButton">Usuń</button>
+                </a>
+            </td>
+            <td>
+                <a href="http://localhost:8080/carapp/user/edit/${employee.id}">
+                    <button type="button" name="deleteEmployeeButton">Edytuj</button>
+                </a>
+            </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-    <div class="flexContainerRegister">
-        <a href="http://localhost:8080/carapp/user/add">
-            <button type="button" name="createEmployeeButton">Dodaj pracownika</button>
-        </a>
-        <a href="http://localhost:8080/carapp/main/menu">
-            <button type="button" name="deleteEmployeeButton">Menu główne</button>
-        </a>
-        <a href="http://localhost:8080/carapp/user/0/delete">
-            <button type="button" name="deleteEmployeeButton">Usuń pracownika</button>
-        </a>
-    </div>
+<div class="flexContainerRegister">
+    <a href="http://localhost:8080/carapp/user/add">
+        <button type="button" name="createEmployeeButton">Dodaj pracownika</button>
+    </a>
+    <a href="http://localhost:8080/carapp/main/menu">
+        <button type="button" name="deleteEmployeeButton">Menu główne</button>
+    </a>
+
+</div>
 </body>
 </html>
