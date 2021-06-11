@@ -18,18 +18,6 @@ public class TaskController {
         this.taskRepository = taskRepository;
     }
 
-    @GetMapping("/read/{id}")
-    @ResponseBody
-    public String readTask(@PathVariable long id) {
-        return taskRepository.findById(id).toString();
-    }
-
-    @GetMapping("/read")
-    @ResponseBody
-    public String readTask() {
-        return taskRepository.findAll().toString();
-    }
-
     @GetMapping("/add")
     public String addTask(Model m) {
         m.addAttribute("task", new TaskRegister());
@@ -44,30 +32,17 @@ public class TaskController {
 
     @GetMapping("/all")
     public String showAllTask(Model m) {
-        List<TaskRegister> tasks = taskRepository.findAll();
+        List<TaskRegister> tasks = taskRepository.findTaskWhereArchiveIsFalse();
         m.addAttribute("orderRegister", tasks);
         return "tasks/taskRegister";
     }
 
     @PostMapping("/all")
     public String showAllTaskPost(Model m) {
-        List<TaskRegister> searchTask = taskRepository.findAll();
+        List<TaskRegister> searchTask = taskRepository.findTaskWhereArchiveIsFalse();
         m.addAttribute("orderRegister", searchTask);
 
         return "tasks/taskRegister";
-    }
-
-    @GetMapping("/{id}/delete")
-    public String deleteTask(@PathVariable long id, Model m) {
-        m.addAttribute("task", taskRepository.findById(id));
-
-        return "tasks/deleteTask";
-    }
-
-    @PostMapping("/{id}/delete")
-    public String deleteTask(@ModelAttribute TaskRegister task) {
-        taskRepository.delete(task);
-        return "redirect:../all";
     }
 
     @GetMapping("/edit/{id}")
@@ -84,4 +59,50 @@ public class TaskController {
 
         return "redirect:../all";
     }
+
+    @GetMapping("/archive/{id}")
+    public String archiveTask(Model m, @PathVariable long id) {
+        TaskRegister archiveTask = taskRepository.findByTaskId(id);
+        m.addAttribute("task", archiveTask);
+
+        return "tasks/archivingTask";
+    }
+
+    @PostMapping("/archive/{id}")
+    public String archiveTaskPost(TaskRegister taskRegister) {
+        taskRegister.setArchive(true);
+        taskRepository.save(taskRegister);
+
+        return "redirect:../all";
+    }
+
+    @GetMapping("/archiveTask")
+    public String archive(Model m) {
+        List<TaskRegister> taskRegister = taskRepository.findTaskWhereArchiveIsTrue();
+        m.addAttribute("orderRegister", taskRegister);
+
+        return "tasks/archive";
+    }
+
+    @PostMapping("/archiveTask")
+    public String archivePost(Model m) {
+        List<TaskRegister> taskRegister = taskRepository.findTaskWhereArchiveIsTrue();
+        m.addAttribute("orderRegister", taskRegister);
+
+        return "tasks/archive";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteArchiveTask(@PathVariable long id, Model m) {
+        m.addAttribute("task", taskRepository.findById(id));
+
+        return "tasks/deleteTask";
+    }
+
+    @PostMapping("/delete/{id}")
+    public String deleteArchiveTaskPost(@ModelAttribute TaskRegister task) {
+        taskRepository.delete(task);
+        return "redirect:../archiveTask";
+    }
+
 }

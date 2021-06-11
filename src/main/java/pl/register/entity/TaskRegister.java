@@ -20,11 +20,12 @@ public class TaskRegister {
     private String vehicleModel;
     private String describeOrder;
     private String orderCost;
+    private boolean isArchive;
 
     public TaskRegister(Long id, int employeeID, String customerFirstName,
                         String customerLastName, String customerTelephone,
                         String customerPesel, String vehicleModel,
-                        String describeOrder, String orderCost) {
+                        String describeOrder, String orderCost, boolean isArchive) {
         this.id = id;
         this.employeeID = employeeID;
         this.customerFirstName = customerFirstName;
@@ -34,6 +35,7 @@ public class TaskRegister {
         this.vehicleModel = vehicleModel;
         this.describeOrder = describeOrder;
         this.orderCost = orderCost;
+        this.isArchive = isArchive;
     }
 
     public TaskRegister() {
@@ -109,6 +111,15 @@ public class TaskRegister {
 
     public void setOrderCost(String orderCost) {
         this.orderCost = orderCost;
+    }
+
+    public boolean isArchive() {
+        return isArchive;
+    }
+
+    public Object setArchive(boolean archive) {
+        isArchive = archive;
+        return null;
     }
 
     @Override

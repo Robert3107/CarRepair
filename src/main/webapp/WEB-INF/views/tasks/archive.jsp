@@ -38,23 +38,15 @@
             <td><c:out value="${task.describeOrder}"/></td>
             <td><c:out value="${task.orderCost}"/></td>
             <td>
-                <a href="http://localhost:8080/carapp/tasks/edit/${task.id}">
-                    <button type="button" name="editButton">Edytuj</button>
-                </a>
-                <a href="http://localhost:8080/carapp/tasks/archive/${task.id}">
-                    <button type="button" name="archiveButton">Archiwizuj</button>
+                <a href="http://localhost:8080/carapp/tasks/delete/${task.id}">
+                    <button type="button" name="mainMenuButton">Usuń</button>
                 </a>
             </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-<div class="flexContainerRegister">
-
-    <a href="http://localhost:8080/carapp/tasks/add">
-        <button type="button" name="addNewTaskButton">Dodaj nowe zlecenie</button>
-    </a>
-
+<div class="groupPosition">
     <a href="http://localhost:8080/carapp/main/menu">
         <button type="button" name="mainMenuButton">Menu główne</button>
     </a>

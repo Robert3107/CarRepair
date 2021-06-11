@@ -16,11 +16,8 @@
         <form:input id="id" path="id" placeholder="ID..."/>
     </div>
     <div class="groupPosition">
-        <a href="http://localhost:8080/carapp/tasks/all">
+        <a href="http://localhost:8080/carapp/tasks/ar">
             <input type="submit" value="Usuń">
-        </a>
-        <a href="http://localhost:8080/carapp/main/menu">
-            <button type="button" name="mainMenuButton">Menu główne</button>
         </a>
     </div>
 </form:form>

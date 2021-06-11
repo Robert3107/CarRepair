@@ -31,8 +31,6 @@
                 <a href="http://localhost:8080/carapp/user/${employee.id}/delete">
                     <button type="button" name="deleteEmployeeButton">Usuń</button>
                 </a>
-            </td>
-            <td>
                 <a href="http://localhost:8080/carapp/user/edit/${employee.id}">
                     <button type="button" name="deleteEmployeeButton">Edytuj</button>
                 </a>

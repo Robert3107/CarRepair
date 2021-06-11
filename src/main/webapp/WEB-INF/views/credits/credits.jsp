@@ -13,8 +13,10 @@
   <div class="pageTittle">
       "CarRepair" jest prostą aplikacją webową umożliwiająca zarządzanie zleceniami napraw
       oraz kontrolę przebiegu pracy w warsztacie samochodowym.<br> Aplikacji umożliwia tworzenie nowych zleceń,
-      edycje zleceń aktualnych, oraz zarządzanie aktualnymi pracownikami.<br>
-      Program jest oparty o środowisko Java, oraz wykorzystuję framework-i Spring oraz Spring Hibernate.
+      edycje zleceń aktualnych, stworzenie profilu nowo zatrudnionego pracownika,
+      oraz zarządzanie zatrudnionym personelem.
+      Program jest oparty o środowisko Java, wykorzystuje technologię Spring, Hibernate, MySQL, JPA oraz Tomcat.
+
   </div>
   <div class="divPositionButton">
     <a href="http://localhost:8080/carapp/main/menu">
