@@ -15,25 +15,24 @@
     <a href="http://localhost:8080/carapp/tasks/add">
         <div class="mainDiv">Nowe zlecenie</div>
     </a>
-
     <a href="http://localhost:8080/carapp/tasks/all">
         <div class="mainDiv">Rejestr zleceń</div>
     </a>
-
     <a href="http://localhost:8080/carapp/user/all">
         <div class="mainDiv">Pracownicy</div>
     </a>
     <a href="http://localhost:8080/carapp/customers/all">
         <div class="mainDiv">Klienci</div>
     </a>
-
+    <a href="http://localhost:8080/carapp/parts/all">
+        <div class="mainDiv">Rejestr części</div>
+    </a>
     <a href="http://localhost:8080/carapp/tasks/archiveTask">
         <div class="mainDiv">Archiwum</div>
     </a>
     <a href="http://localhost:8080/carapp/main/credits">
         <div class="mainDiv">O aplikacji</div>
     </a>
-
     <div class="divPositionButton">
         <a href="http://localhost:8080/carapp">
             <button>Wyloguj</button>

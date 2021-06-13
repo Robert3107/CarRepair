@@ -36,10 +36,10 @@
             <td><c:out value="${client.pesel}"/></td>
             <td><c:out value="${client.discount}"/></td>
             <td>
-                <a href="http://localhost:8080/carapp/customer/${customers.id}/delete">
+                <a href="http://localhost:8080/carapp/customers/delete/${client.id}">
                     <button type="button" name="deleteEmployeeButton">Usuń</button>
                 </a>
-                <a href="http://localhost:8080/carapp/user/edit/${customers.id}">
+                <a href="http://localhost:8080/carapp/customers/edit/${client.id}">
                     <button type="button" name="deleteEmployeeButton">Edytuj</button>
                 </a>
             </td>

@@ -14,8 +14,6 @@ import java.util.List;
 @RequestMapping("/tasks")
 public class TaskController {
 
-    //dodaj jebany debilu błedy dla pracowników, encja klienta, walidacja klienta, błędy dla klienta
-
     private final TaskRepository taskRepository;
 
     public TaskController(TaskRepository taskRepository) {
