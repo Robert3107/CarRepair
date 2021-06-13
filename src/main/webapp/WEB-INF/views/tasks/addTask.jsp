@@ -27,10 +27,12 @@
     <div class="flexContainer">
         <label for="customerTelephone">Telefon kontaktowy</label>
         <form:input id="customerTelephone" path="customerTelephone" placeholder="123-456-789"/>
+        <form:errors path="customerTelephone" />
     </div>
     <div class="flexContainer">
         <label for="customerPesel">PESEL</label>
         <form:input id="customerPesel" path="customerPesel" placeholder="Podaj pesel..."/>
+        <form:errors path="customerPesel" />
     </div>
     <div class="flexContainer">
         <label for="vehicleModel">Model pojazdu</label>

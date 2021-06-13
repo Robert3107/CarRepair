@@ -2,15 +2,19 @@ package pl.register.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.register.entity.TaskRegister;
 import pl.register.repository.TaskRepository;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
 @RequestMapping("/tasks")
 public class TaskController {
+
+    //dodaj jebany debilu błedy dla pracowników, encja klienta, walidacja klienta, błędy dla klienta
 
     private final TaskRepository taskRepository;
 
@@ -25,7 +29,10 @@ public class TaskController {
     }
 
     @PostMapping("/add")
-    public String addTaskPost(@ModelAttribute TaskRegister taskRegister) {
+    public String addTaskPost(@ModelAttribute @Valid TaskRegister taskRegister, BindingResult violations) {
+        if (violations.hasErrors()) {
+            return "tasks/addTaskError";
+        }
         taskRepository.save(taskRegister);
         return "redirect:all";
     }
@@ -54,9 +61,11 @@ public class TaskController {
     }
 
     @PostMapping("/edit/{id}")
-    public String editTaskPost(TaskRegister taskRegister) {
+    public String editTaskPost(@Valid TaskRegister taskRegister, BindingResult violations) {
+        if (violations.hasErrors()) {
+            return "tasks/editTaskError";
+        }
         taskRepository.save(taskRegister);
-
         return "redirect:../all";
     }
 
@@ -69,7 +78,10 @@ public class TaskController {
     }
 
     @PostMapping("/archive/{id}")
-    public String archiveTaskPost(TaskRegister taskRegister) {
+    public String archiveTaskPost(@Valid TaskRegister taskRegister, BindingResult violations) {
+        if (violations.hasErrors()) {
+            return "tasks/archiveError";
+        }
         taskRegister.setArchive(true);
         taskRepository.save(taskRegister);
 

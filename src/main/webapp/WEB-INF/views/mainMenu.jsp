@@ -23,6 +23,9 @@
     <a href="http://localhost:8080/carapp/user/all">
         <div class="mainDiv">Pracownicy</div>
     </a>
+    <a href="http://localhost:8080/carapp/customers/all">
+        <div class="mainDiv">Klienci</div>
+    </a>
 
     <a href="http://localhost:8080/carapp/tasks/archiveTask">
         <div class="mainDiv">Archiwum</div>

@@ -1,6 +1,7 @@
 package pl.register.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -10,6 +11,7 @@ public class TaskRegister {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
     private int employeeID;
     private String customerFirstName;
     private String customerLastName;
@@ -19,6 +21,7 @@ public class TaskRegister {
     private String customerPesel;
     private String vehicleModel;
     private String describeOrder;
+    @NotNull
     private String orderCost;
     private boolean isArchive;
 

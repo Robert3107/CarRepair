@@ -2,10 +2,12 @@ package pl.register.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.register.entity.Employee;
 import pl.register.repository.EmployeeRepository;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -25,7 +27,10 @@ public class EmployeeController {
     }
 
     @PostMapping("/add")
-    public String addTaskPost(@ModelAttribute Employee employee) {
+    public String addTaskPost(@ModelAttribute @Valid Employee employee, BindingResult violations) {
+        if (violations.hasErrors()) {
+            return "user/addEmployeeError";
+        }
         employeeRepository.save(employee);
         return "redirect:all";
     }
@@ -67,7 +72,10 @@ public class EmployeeController {
     }
 
     @PostMapping("/edit/{id}")
-    public String editEmployeePost(Employee employee) {
+    public String editEmployeePost(@Valid Employee employee, BindingResult violations) {
+        if (violations.hasErrors()) {
+            return "user/editEmployeeError";
+        }
         employeeRepository.save(employee);
 
         return "redirect:../all";
