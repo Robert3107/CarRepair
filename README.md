@@ -10,7 +10,7 @@ The application allows you to:
 - control and editing of orders
 - archiving completed tasks
 
-#Technologies
+# Technologies
 ___
 
 - Java
@@ -20,7 +20,7 @@ ___
 - HTML/JSP
 - CSS
 
-#Contact
+# Contact
 ___
 
 Please add suggestions or contact me if you like my project.
